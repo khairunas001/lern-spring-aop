@@ -15,7 +15,12 @@ public class HelloServiceTest {
     @Test
     void helloService(){
         Assertions.assertEquals("Hello Anas", helloService.hello("Anas"));
+        Assertions.assertEquals("Hello Anas Sugih", helloService.helloFirstLast("Anas", "Sugih"));
         Assertions.assertEquals("Bye Anas", helloService.bye("Anas"));
+        Assertions.assertThrows(IllegalArgumentException.class, () ->{
+           helloService.error("");
+        });
+        helloService.test();
     }
 
 }
